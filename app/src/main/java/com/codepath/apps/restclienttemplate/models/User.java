@@ -3,8 +3,9 @@ package com.codepath.apps.restclienttemplate.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
-
+@Parcel
 public class User {
 
     // list all attributes
@@ -24,5 +25,24 @@ public class User {
         user.profileImageUrl = json.getString("profile_image_url");
 
         return user;
+    }
+    public User () {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public long getUid() {
+        return uid;
+    }
+
+    public String getScreenName() {
+        return screenName;
+    }
+
+    public String getProfileImageUrl() {
+        return profileImageUrl;
     }
 }
