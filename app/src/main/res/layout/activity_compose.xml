@@ -12,9 +12,11 @@
         android:layout_height="277dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="39dp"
         android:ems="10"
         android:hint="Enter Tweet"
-        android:inputType="textShortMessage" />
+        android:inputType="textShortMessage"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/btnPost"
@@ -23,14 +25,15 @@
         android:layout_below="@+id/etTweet"
         android:layout_centerHorizontal="true"
         android:onClick="onPostButton"
-        android:text="Button" />
+        android:text="POST" />
 
     <TextView
         android:id="@+id/tvCharacterCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnPost"
-        android:layout_marginStart="31dp"
+        android:layout_above="@+id/etTweet"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="-39dp"
+        android:layout_marginEnd="58dp"
         android:text="0/140" />
 </RelativeLayout>
