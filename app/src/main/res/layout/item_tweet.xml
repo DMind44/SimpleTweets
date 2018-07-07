@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/light_gray"
     >
+
+
+
 
     <ImageView
         android:id="@+id/ivProfileImage"
@@ -21,6 +25,7 @@
         android:layout_marginLeft="5dp"
         android:layout_toEndOf="@+id/ivProfileImage"
         android:layout_marginBottom="10dp"
+        android:background="@color/light_gray"
         android:text="TextView" />
 
     <TextView
@@ -28,20 +33,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tvUserName"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@id/tvUserName"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tvUserName"
+        android:layout_marginTop="-10dp"
+        android:background="@color/light_gray"
         android:text="TextView" />
 
-    <Button
-        android:id="@+id/btnReply"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:minHeight="0dp"
-        android:minWidth="0dp"
-        android:text="reply"
-        android:textSize="1sp" />
+
+    <ImageButton
+        android:id="@+id/ibLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/tvBody"
+        android:layout_toStartOf="@+id/ibReply"
+        android:background="@color/light_gray"
+        android:onClick="onLike"
+        app:srcCompat="@drawable/ic_vector_heart_stroke" />
+
+    <ImageButton
+        android:id="@+id/ibReply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/tvBody"
+        android:layout_centerHorizontal="true"
+        android:background="@color/light_gray"
+        app:srcCompat="@drawable/vector_compose_dm_fab" />
+
+    <ImageButton
+        android:id="@+id/ibRetweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/tvBody"
+        android:layout_toEndOf="@+id/ibReply"
+        android:background="@color/light_gray"
+        app:srcCompat="@drawable/ic_vector_retweet" />
 </RelativeLayout>

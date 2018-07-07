@@ -1,13 +1,17 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -59,6 +63,20 @@ public class TimelineActivity extends AppCompatActivity {
     public void onComposeAction(MenuItem mi) {
         Intent i = new Intent(TimelineActivity.this, ComposeActivity.class);
         startActivityForResult(i, REQUEST_CODE);
+    }
+
+    public void onLike (View view) {
+        ImageButton imLike = (ImageButton) view;
+        Drawable im = getResources().getDrawable(R.drawable.ic_vector_heart_stroke);
+        Drawable.ConstantState current = imLike.getDrawable().getConstantState();
+        Drawable.ConstantState unLiked = im.getConstantState();
+        if(current == unLiked) {
+            imLike.setImageDrawable(
+                    ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_vector_heart));
+        }
+        else {
+            imLike.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_vector_heart_stroke));
+        }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
